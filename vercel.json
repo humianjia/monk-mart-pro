@@ -6,15 +6,12 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/game1.html"
-    },
-    {
-      "src": "/(.+)",
-      "dest": "/$1"
-    }
+  "rewrites": [
+    { "source": "/", "destination": "/game1.html" },
+    { "source": "/guide", "destination": "/guide.html" },
+    { "source": "/advanced", "destination": "/advanced.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/forum", "destination": "/forum.html" }
   ],
   "cleanUrls": true,
   "trailingSlash": false
