@@ -1046,7 +1046,76 @@
     });
 </script>
 
-</html>
+<script>
+    function gameModal() {
+        return {
+            isOpen: false,
+            title: '',
+            gameUrl: '',
+            isFullscreen: false,
+
+            open(title, url) {
+                this.isOpen = true;
+                this.title = title;
+                this.gameUrl = url;
+                document.body.style.overflow = 'hidden';
+            },
+
+            close() {
+                this.isOpen = false;
+                document.body.style.overflow = '';
+                if (this.isFullscreen) {
+                    this.toggleFullscreen();
+                }
+            },
+
+            toggleFullscreen() {
+                const modalContent = this.$refs.modalContent;
+                const iframe = this.$refs.gameFrame;
+
+                if (!this.isFullscreen) {
+                    // 使用 CSS 模拟全屏
+                    modalContent.style.position = 'fixed';
+                    modalContent.style.top = '0';
+                    modalContent.style.left = '0';
+                    modalContent.style.right = '0';
+                    modalContent.style.bottom = '0';
+                    modalContent.style.width = '100vw';
+                    modalContent.style.height = '100vh';
+                    modalContent.style.zIndex = '9999';
+                    modalContent.style.background = '#000';
+                    iframe.style.height = '100vh';
+                    
+                    // 隐藏其他元素
+                    const header = modalContent.parentElement.querySelector('.flex.justify-between');
+                    if (header) {
+                        header.style.display = 'none';
+                    }
+                } else {
+                    // 恢复正常显示
+                    modalContent.style.position = '';
+                    modalContent.style.top = '';
+                    modalContent.style.left = '';
+                    modalContent.style.right = '';
+                    modalContent.style.bottom = '';
+                    modalContent.style.width = '';
+                    modalContent.style.height = '';
+                    modalContent.style.zIndex = '';
+                    modalContent.style.background = '';
+                    iframe.style.height = '80vh';
+                    
+                    // 显示其他元素
+                    const header = modalContent.parentElement.querySelector('.flex.justify-between');
+                    if (header) {
+                        header.style.display = 'flex';
+                    }
+                }
+                
+                this.isFullscreen = !this.isFullscreen;
+            }
+        }
+    }
+</script>
 
 <style>
     /* 确保按钮容器占据其父元素的全部宽度 */
@@ -1086,3 +1155,4 @@
         /* 更深的绿色 */
     }
 </style>
+</html>
