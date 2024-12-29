@@ -2,14 +2,20 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.html",
+      "src": "**",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/",
+      "dest": "/game1.html"
+    },
+    {
+      "src": "/(.+)",
       "dest": "/$1"
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
