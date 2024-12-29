@@ -337,7 +337,8 @@
                     } else if (iframe.msRequestFullscreen) { // IE/Edge
                         iframe.msRequestFullscreen();
                     } else {
-                        alert('Fullscreen API is not supported in this browser.');
+                        iframe.requestFullscreen();
+                        console.log('Fullscreen API is not supported in this browser.');
                     }
                 });
             </script>
