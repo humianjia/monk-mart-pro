@@ -975,7 +975,8 @@
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round"
                                 class="text-gray-600 group-hover:text-green-500 transition-colors">
-                                <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0-2 0" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0-2 0" />
                                 <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0-2 0" />
                                 <path
                                     d="M15.5 17c0 1 1.5 3 2 3 1.5 0 2.833-1.667 3.5-3 .667-1.667.5-5.833-1.5-11.5-1.457-1.015-3-1.34-4.5-1.5l-.972 1.923a11.913 11.913 0 0 0-4.053 0L9 4c-1.5.16-3.043.485-4.5 1.5-2 5.667-2.167 9.833-1.5 11.5.667 1.333 2 3 3.5 3 .5 0 2-2 2-3" />
@@ -1062,56 +1063,53 @@
             },
 
             close() {
-                this.isOpen = false;
-                document.body.style.overflow = '';
                 if (this.isFullscreen) {
                     this.toggleFullscreen();
                 }
+                this.isOpen = false;
+                document.body.style.overflow = '';
             },
 
             toggleFullscreen() {
-                const modalContent = this.$refs.modalContent;
-                const iframe = this.$refs.gameFrame;
-
-                if (!this.isFullscreen) {
-                    // 使用 CSS 模拟全屏
-                    modalContent.style.position = 'fixed';
-                    modalContent.style.top = '0';
-                    modalContent.style.left = '0';
-                    modalContent.style.right = '0';
-                    modalContent.style.bottom = '0';
-                    modalContent.style.width = '100vw';
-                    modalContent.style.height = '100vh';
-                    modalContent.style.zIndex = '9999';
-                    modalContent.style.background = '#000';
-                    iframe.style.height = '100vh';
+                this.isFullscreen = !this.isFullscreen;
+                
+                if (this.isFullscreen) {
+                    // 进入全屏模式
+                    document.documentElement.style.overflow = 'hidden';
+                    document.body.style.overflow = 'hidden';
                     
-                    // 隐藏其他元素
-                    const header = modalContent.parentElement.querySelector('.flex.justify-between');
-                    if (header) {
-                        header.style.display = 'none';
+                    // 在 iOS Safari 中，需要特别处理顶部和底部工具栏
+                    if (this.isIOS()) {
+                        window.scrollTo(0, 0);
+                        document.body.style.position = 'fixed';
+                        document.body.style.width = '100%';
+                        document.body.style.height = '100%';
                     }
                 } else {
-                    // 恢复正常显示
-                    modalContent.style.position = '';
-                    modalContent.style.top = '';
-                    modalContent.style.left = '';
-                    modalContent.style.right = '';
-                    modalContent.style.bottom = '';
-                    modalContent.style.width = '';
-                    modalContent.style.height = '';
-                    modalContent.style.zIndex = '';
-                    modalContent.style.background = '';
-                    iframe.style.height = '80vh';
+                    // 退出全屏模式
+                    document.documentElement.style.overflow = '';
+                    document.body.style.overflow = 'hidden'; // 保持模态框滚动锁定
                     
-                    // 显示其他元素
-                    const header = modalContent.parentElement.querySelector('.flex.justify-between');
-                    if (header) {
-                        header.style.display = 'flex';
+                    if (this.isIOS()) {
+                        document.body.style.position = '';
+                        document.body.style.width = '';
+                        document.body.style.height = '';
                     }
                 }
                 
                 this.isFullscreen = !this.isFullscreen;
+            },
+
+            isIOS() {
+                return [
+                    'iPad Simulator',
+                    'iPhone Simulator',
+                    'iPod Simulator',
+                    'iPad',
+                    'iPhone',
+                    'iPod'
+                ].includes(navigator.platform)
+                || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
             }
         }
     }
