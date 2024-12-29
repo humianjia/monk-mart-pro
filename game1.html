@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey Mart</title>
+    <meta name="description" content="控制刚开超市的可爱猴子角色">
+    <meta name="keywords"
+        content="Sprunki, Incredibox, Fan-Made Mod, Music-Mixing, Sound Loops, Musical Compositions, Drag-and-drop Interface">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4CAF50',
+                        secondary: '#2E7D32',
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans SC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+
+<body class="bg-gradient-to-r from-green-100 via-white to-emerald-100">
+    <section class="relative top-0 left-0 right-0 z-[1000] bg-white/50 backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
+                        Monkey Mart
+                    </h1>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="game1.html" class="text-gray-600 hover:text-green-500 transition-colors">首页</a>
+                    <a href="guide.html" class="text-gray-600 hover:text-green-500 transition-colors">游戏介绍</a>
+                    <a href="advanced.html" class="text-gray-600 hover:text-green-500 transition-colors">游戏进阶</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-green-500 transition-colors">博客</a>
+                </nav>
+
+                <!-- Language Selector -->
+                <div class="relative" x-data="{ open: false }">
+                    <button @click="open = !open" @click.away="open = false"
+                        class="flex items-center space-x-2 px-4 py-2 rounded-full bg-white/80 shadow-sm border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-gray-600">
+                            <path d="m5 8 6 6" />
+                            <path d="m4 14 6-6 2-3" />
+                            <path d="M2 5h12" />
+                            <path d="M7 2h1" />
+                            <path d="m22 22-5-10-5 10" />
+                            <path d="M14 18h6" />
+                        </svg>
+                        <span class="text-sm text-gray-600">简体中文</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-gray-600 transform transition-transform duration-200"
+                            :class="{ 'rotate-180': open }">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                        class="absolute right-0 mt-2 w-48 rounded-xl bg-white shadow-lg border border-gray-100 py-2 z-[1001]">
+                        <a href="#"
+                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50">
+                            简体中文
+                        </a>
+                        <a href="game1-en.html"
+                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50">
+                            English
+                        </a>
+                        <a href="#"
+                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50">
+                            日本語
+                        </a>
+                        <a href="#"
+                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50">
+                            한국어
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section -->
+    <section class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-6">
+                    <h1
+                        class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                        Monkey Mart
+                    </h1>
+                    <p class="text-xl md:text-lg text-gray-500 font-medium">
+                        Monkey
+                        Mart以独特的猴子主题为背景，玩家将扮演一家猴子超市的店主，通过精心经营和管理，吸引各种形态各异、性格有趣的猴子顾客前来参观购物。游戏提供了丰富的商品种类和细致逼真的超市场景，让玩家仿佛置身于真实的购物环境中。
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                            </svg>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-600 leading-relaxed">探索电子音乐到复古打击乐，让多样化音效激发你的创作灵感</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-600 leading-relaxed">在创意关卡中尽情发挥，与全球玩家分享你的独特音乐作品</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-600 leading-relaxed">涂鸦艺术风格与动感音效完美融合，带来震撼视听体验</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 mt-0.5" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                            </svg>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-600 leading-relaxed">通过直观的拖拽操作，让每个人都能轻松创作音乐</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-1">
+                        <a href="#section2"
+                            class="inline-flex items-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                            开始游戏
+                        </a>
+                    </div>
+                </div>
+                <!-- Right Video -->
+                <!-- <div class="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 z-0"></div>
+                    <iframe class="absolute inset-[2px] w-[calc(100%-4px)] h-[calc(100%-4px)] rounded-2xl z-10"
+                        src="https://youtu.be/KsyQBXdkAuM"
+                        title="Sprunki Gameplay Video" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div> -->
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"><img src="01.open01.png" alt="Image 1"></div>
+                        <div class="carousel-item"><img src="image2.jpg" alt="Image 2"></div>
+                        <div class="carousel-item"><img src="image3.jpg" alt="Image 3"></div>
+                    </div>
+                    <button class="carousel-control prev" onclick="prevSlide()">&lt;</button>
+                    <button class="carousel-control next" onclick="nextSlide()">&gt;</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            let currentIndex = 0; 
+            function showSlide(index) {
+                const slides = document.querySelectorAll('.carousel-item');
+                const totalSlides = slides.length;
+
+                if (index >= totalSlides) {
+                    currentIndex = 0;
+                } else if (index < 0) {
+                    currentIndex = totalSlides - 1;
+                } else {
+                    currentIndex = index;
+                }
+
+                const offset = -currentIndex * 100 + '%';
+                document.querySelector('.carousel-inner').style.transform = `translateX(${offset})`;
+            }
+
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentIndex - 1);
+            }
+
+            // 自动播放轮播图（可选）
+            setInterval(nextSlide, 3000); // 每3秒切换一次
+        </script>
+        <style>
+            .carousel {
+                position: relative;
+                width: 80%;
+                max-width: 800px;
+                overflow: hidden;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .carousel-inner {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .carousel-item {
+                min-width: 100%;
+                box-sizing: border-box;
+            }
+
+            .carousel-item img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            .carousel-control {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                z-index: 10;
+            }
+
+            .carousel-control.prev {
+                left: 10px;
+            }
+
+            .carousel-control.next {
+                right: 10px;
+            }
+        </style>
+        <div class="w-full mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+            <div class="flex space-x-6 overflow-x-auto pb-4 scrollbar-hide">
+                <!-- 动态音乐体验 -->
+                <div class="flex-none w-72 p-4 rounded-xl border-2 border-green-500/30 bg-white/50 backdrop-blur-sm">
+                    <h3
+                        class="text-lg font-bold mb-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
+                        独特的猴子主题
+                    </h3>
+                    <p class="text-sm text-gray-400">Monkey Mart以猴子为主题，为玩家带来别开生面的购物体验。</p>
+                </div>
+
+                <!-- 个性角色 -->
+                <div class="flex-none w-72 p-4 rounded-xl border-2 border-emerald-500/30 bg-white/50 backdrop-blur-sm">
+                    <h3
+                        class="text-lg font-bold mb-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
+                        精美的画面与音效</h3>
+                    <p class="text-sm text-gray-400">游戏通过精美的画面和真实的音效，为玩家营造了一个沉浸式的经营环境。</p>
+                </div>
+
+                <!-- 创意视觉 -->
+                <div class="flex-none w-72 p-4 rounded-xl border-2 border-green-600/30 bg-white/50 backdrop-blur-sm">
+                    <h3
+                        class="text-lg font-bold mb-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
+                        简单易懂的操作方式</h3>
+                    <p class="text-sm text-gray-400">游戏操作简单易懂，上手容易，适合各类玩家体验。</p>
+                </div>
+
+                <!-- 自定义关卡 -->
+                <div class="flex-none w-72 p-4 rounded-xl border-2 border-emerald-500/30 bg-white/50 backdrop-blur-sm">
+                    <h3
+                        class="text-lg font-bold mb-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
+                        支持离线模式</h3>
+                    <p class="text-sm text-gray-400">游戏支持离线模式，让玩家在无网络连接的情况下也能享受游戏的乐趣。</p>
+                </div>
+            </div>
+        </div>
+        <div style="height: 50px; width: 80px;margin-top: 20vh; " id="section2"></div>
+    </section>
+    <!-- How to Play Section -->
+    <section class="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/90 to-white/60">
+        <div class="max-w-7xl mx-auto">
+            <h2
+                class="text-3xl md:text-4xl font-bold h-12 mb-8 text-center bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
+                如何玩 Monkey Mart 游戏？
+            </h2>
+
+            <!-- Video Container -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <div
+                    class="aspect-video rounded-xl overflow-hidden p-[5px] bg-gradient-to-br from-green-500 via-emerald-500 to-green-600">
+                    <div class="w-full h-full bg-white rounded-lg overflow-hidden">
+                        <iframe id="myIframe" class="w-full h-full" src="https://monkey-mart.io/iframe/index.html"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+
+                </div>
+                <div class="button-container" style="margin-top: 12px;">
+                    <button class="fullscreen-button green-button" id="fullscreenBtn">全屏</button>
+                </div>
+            </div>
+
+            <script>
+                // 获取按钮和iframe的引用
+                const fullscreenBtn = document.getElementById('fullscreenBtn');
+                const iframe = document.getElementById('myIframe');
+
+                // 监听按钮的点击事件
+                fullscreenBtn.addEventListener('click', () => {
+                    // 检查是否支持全屏API
+                    if (iframe.requestFullscreen) {
+                        iframe.requestFullscreen();
+                    } else if (iframe.mozRequestFullScreen) { // Firefox
+                        iframe.mozRequestFullScreen();
+                    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari 和 Opera
+                        iframe.webkitRequestFullscreen();
+                    } else if (iframe.msRequestFullscreen) { // IE/Edge
+                        iframe.msRequestFullscreen();
+                    } else {
+                        alert('Fullscreen API is not supported in this browser.');
+                    }
+                });
+            </script>
+
+            <!-- Instructions Grid -->
+            <div class="grid md:grid-cols-3 gap-6 w-full mx-auto">
+                <!-- 开始游戏 -->
+                <div class="bg-white/50 backdrop-blur-sm rounded-xl p-4 border-2 border-green-500/30">
+                    <h3 class="flex items-center gap-2 text-lg font-bold mb-3">
+                        <span
+                            class="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 text-white text-sm">1</span>
+                        <span
+                            class="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">商品选择与进货</span>
+                    </h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            玩家可以根据自己的喜好和策略选择商品进行进货，包括但不限于食品、饮料、玩具、日用品等，以满足不同猴子顾客的需求。
+                        </li>
+                        <!-- <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            点击全屏可以进入全屏模式
+                        </li> -->
+                        <!-- <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            创作你的第一个节拍
+                        </li> -->
+                    </ul>
+                </div>
+
+                <!-- 创作技巧 -->
+                <div class="bg-white/50 backdrop-blur-sm rounded-xl p-4 border-2 border-emerald-500/30">
+                    <h3 class="flex items-center gap-2 text-lg font-bold mb-3">
+                        <span
+                            class="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 text-white text-sm">2</span>
+                        <span
+                            class="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">超市布局与陈列</span>
+                    </h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <span class="text-emerald-500 mr-2">•</span>
+                            游戏提供了丰富的商品分类和摆放选项，玩家可以根据自己的喜好和策略来布置超市货架，使超市看起来更有吸引力，并帮助顾客更快找到所需商品。
+                        </li>
+                        <!-- <li class="flex items-start">
+                            <span class="text-emerald-500 mr-2">•</span>
+                            尝试不同组合，找到完美混音
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-500 mr-2">•</span>
+                            使用混音器调整音量和效果
+                        </li> -->
+                    </ul>
+                </div>
+
+                <!-- 高级玩法 -->
+                <div class="bg-white/50 backdrop-blur-sm rounded-xl p-4 border-2 border-green-600/30">
+                    <h3 class="flex items-center gap-2 text-lg font-bold mb-3">
+                        <span
+                            class="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 text-white text-sm">3</span>
+                        <span
+                            class="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">订单处理与补货</span>
+                    </h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">•</span>
+                            游戏设有订单系统，玩家需要准确打包订单并及时补货，以确保超市的顺畅运营。在高峰时段，要快速处理订单，避免顾客等待太久而流失。
+                        </li>
+                        <!-- <li class="flex items-start">
+                            <span class="text-green-600 mr-2">•</span>
+                            录制并分享你的创作
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">•</span>
+                            与社区互动，获取灵感
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Spunky Hot Games Section -->
+    <section class="py-8 pt-4 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/90 to-white/60">
+        <div class="max-w-7xl mx-auto">
+            <h2
+                class="text-3xl md:text-4xl font-bold h-12 mb-8 text-center bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
+                Spunky Hot 游戏合集
+            </h2>
+
+            <!-- Game Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                <!-- Game Card Template (Repeat for each game) -->
+                <!-- Sprunki Retake -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/power-wash-cleanup" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=408,height=408,fit=cover,f=auto/30ae3f6cc3360f6176c49533da72c297.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Power Wash Cleanup
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Power Wash Cleanup
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Spunky Incredibox -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/stunt-bike-extreme" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/b801ed25a58e69e00160540cbb999119.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Stunt Bike Extreme
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Stunt Bike Extreme
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div><!-- Sprunki Infected -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/punchers" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/3f4b149963b07ef8a5c7c2f1e7dbca04.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Punchers
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Punchers
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Colorbox Mustard -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/duo-survival" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/874d68cb26daf46ff1ad69e3467edf33.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Duo Survival
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Duo Survival
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Esprunki Incredibox -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/zombie-dying-survival-days" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/1fb3b81041295dbe4371d2cadc426f24.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Zombie Dying: Survival Days
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Zombie Dying: Survival Days
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Sprunki Remastered -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/sprint-league" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/bb235c9d7c61c7a831813a50059e2656.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Sprint League
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Sprint League
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Sprunki Rejoyed -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/minefun-io" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/cbd99e09027eadb4f69cc5f424872fb3.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    MineFun.io
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    MineFun.io
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Sprunki Baby -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/lurkers-io" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/84ed40b8ade4e9f5bbf1fa7b3acef3a3.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Lurkers.io
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Lurkers.io
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Incredibox Mustard -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/disaster-arena" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/a5ec3ed20f8915c9d4f6fc60c32ca7b2.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Disaster Arena
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Disaster Arena
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Sprunked -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/escape-from-school" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/a59703c960494998f380844a00468c67.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Escape From School
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Escape From School
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Sprunki With Fan Character -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/rainbow-obby" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/fd770762bcef1177ee819e34fda941f1.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Rainbow Obby
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Rainbow Obby
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Spunky Sprinkle -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/stickman-hook" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/99e090d154caf30f3625df7e456d5984.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Stickman Hook
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Stickman Hook
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Sprunked 2 -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/ragdoll-hit" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/3c892779be9dabb3589586c83ad3eeed.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Ragdoll Hit
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Ragdoll Hit
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Sprunki Greencore -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/zombie-rush" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/b95d4ef6c4911ad136b050effe3c5f16.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Zombie Rush
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Zombie Rush
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Spunky Babies -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/stick-rush" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/bb9bd8a56d97bdd621cceb509a0bdb0c.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Stick Rush
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Stick Rush
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Sprunki Phase 1 -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/temple-of-boom" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/d710fe8830d731072485a582881605ea.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Temple of Boom
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Temple of Boom
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Sprunki OC -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/max-and-mink" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/637feea3-23a7-4a56-9b25-9f36c1426e6c.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Max and Mink
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Max and Mink
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Sprunki Dandy's World -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/funny-food-duel" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/fe257e5d8e0bb14dec7522cd4488acd1.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Funny Food Duel
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Funny Food Duel
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Abgerny Incredibox -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/fish-eat-fish" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/2ac0e37aaff9325c6e2dd60bef91354a.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Fish Eat Fish
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Fish Eat Fish
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Sprunki Phase 3 -->
+                <div
+                    class="relative group overflow-hidden rounded-xl border-2 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-600/30 p-[2px]">
+                    <a href="https://poki.com/zh/g/merge-arena" target="_blank">
+                        <div class="relative h-full w-full rounded-xl bg-white overflow-hidden">
+                            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=188,height=188,fit=cover,f=auto/da3fd762352cdea2e28e99fdca5c6a74.png" alt="Sprunki Retake"
+                                class="w-full h-48 object-cover">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-2 transform transition-all duration-300 bg-gradient-to-t from-green-500/90 via-emerald-500/90 to-green-600/90">
+                                <h3 class="text-base font-bold text-white truncate">
+                                    Merge Arena
+                                </h3>
+                                <p
+                                    class="text-sm text-gray-600 group-hover:text-white/90 mt-2 opacity-0 max-h-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300 overflow-hidden">
+                                    Merge Arena
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Game Moments Section -->
+    <section class="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/80 to-white/40">
+        <div class="max-w-6xl mx-auto mb-8">
+            <h2
+                class="text-3xl  md:text-4xl font-bold mb-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent text-left">
+                探索创作者的音乐世界
+            </h2>
+            <p class="text-gray-600 text-lg max-w-5xl text-left">在这里，每一个创作都是独特的音乐故事。来自全球玩家的精彩演绎，展现 Sprunki 无限的创意可能。</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+            <div
+                class="aspect-video rounded-xl overflow-hidden p-[5px] bg-gradient-to-br from-green-500 via-emerald-500 to-green-600">
+                <div class="w-full h-full bg-white rounded-lg overflow-hidden">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/31adFN6Koqo?si=cTKeSdV_OZMHAock"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div
+                class="aspect-video rounded-xl overflow-hidden p-[5px] bg-gradient-to-br from-green-500 via-emerald-500 to-green-600">
+                <div class="w-full h-full bg-white rounded-lg overflow-hidden">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Z8gLf0MHyuE?si=RalPpoDr_GWFSI3o"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div
+                class="aspect-video rounded-xl overflow-hidden p-[5px] bg-gradient-to-br from-green-500 via-emerald-500 to-green-600">
+                <div class="w-full h-full bg-white rounded-lg overflow-hidden">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/s2bsspVgVdk?si=a7MdvudOx-0CRnfG"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    
+    <!-- TikTok Embed Script -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
+    <!-- Footer -->
+    <footer class="bg-white/80 py-12 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Footer Content Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
+                        Monkey Mart
+                    </h1>
+                    <p class="text-sm text-gray-600">创造属于你的音乐世界，让创意自由绽放。</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-semibold text-gray-900">快速链接</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">游戏下载</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">新手教程</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">更新日志</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">常见问题</a></li>
+                    </ul>
+                </div>
+
+                <!-- Community -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-semibold text-gray-900">社区</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">玩家论坛</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">创作分享</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">活动资讯</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">反馈建议</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-semibold text-gray-900">关注我们</h4>
+                    <div class="flex space-x-3">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition-all duration-300 group">
+                            <span class="sr-only">X (Twitter)</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-gray-600 group-hover:text-green-500 transition-colors">
+                                <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition-all duration-300 group">
+                            <span class="sr-only">YouTube</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-gray-600 group-hover:text-green-500 transition-colors">
+                                <path
+                                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                                <path d="m10 15 5-3-5-3z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition-all duration-300 group">
+                            <span class="sr-only">Reddit</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-gray-600 group-hover:text-green-500 transition-colors">
+                                <path d="M12 8c-1.37.2-3 .7-4 2-1.5 2-1 5.5-1 8 0 1.5 1 3 3 3s3-1 3-3V8Z" />
+                                <path d="M12 8c1.37.2 3 .7 4 2 1.5 2 1 5.5 1 8 0 1.5-1 3-3 3s-3-1-3-3V8Z" />
+                                <path d="M9 11h6" />
+                                <path d="M11 15h2" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition-all duration-300 group">
+                            <span class="sr-only">Discord</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-gray-600 group-hover:text-green-500 transition-colors">
+                                <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0-2 0" />
+                                <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0-2 0" />
+                                <path
+                                    d="M15.5 17c0 1 1.5 3 2 3 1.5 0 2.833-1.667 3.5-3 .667-1.667.5-5.833-1.5-11.5-1.457-1.015-3-1.34-4.5-1.5l-.972 1.923a11.913 11.913 0 0 0-4.053 0L9 4c-1.5.16-3.043.485-4.5 1.5-2 5.667-2.167 9.833-1.5 11.5.667 1.333 2 3 3.5 3 .5 0 2-2 2-3" />
+                                <path d="M7 16.5c3.5 1 6.5 1 10 0" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-gray-100">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <!-- Copyright -->
+                    <p class="text-sm text-gray-600"> 2024 Sprunki. All rights reserved.</p>
+
+                    <!-- Legal Links -->
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-sm text-gray-600 hover:text-green-500 transition-colors">隐私政策</a>
+                        <a href="#" class="text-sm text-gray-600 hover:text-green-500 transition-colors">服务条款</a>
+                        <a href="#" class="text-sm text-gray-600 hover:text-green-500 transition-colors">免责声明</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <section id="game-overlay" class="fixed inset-0 bg-black/80 z-[2000] hidden">
+        <div class="relative w-full h-full flex items-center justify-center">
+            <!-- Game Container -->
+            <div class="relative w-full max-w-7xl mx-4 bg-white rounded-lg" style="border: 5px solid #FF1493;">
+                <!-- Close Button -->
+                <button id="close-game"
+                    class="absolute top-4 right-4 p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors z-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Game Iframe -->
+                <iframe id="iframehtml5" class="game-iframe" src="https://sprunki.org/sprunki-game-home.embed"
+                    width="100%" height="601px" title="Sprunki Incredibox" frameborder="0" border="0" scrolling="auto"
+                    allowfullscreen="" data-wg-content="true">
+                </iframe>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    // Add this to your existing script section
+    document.addEventListener('DOMContentLoaded', () => {
+        const heroButton = document.querySelector('#hero-play-button'); // Add an ID to your hero button
+        const gameOverlay = document.querySelector('#game-overlay');
+        const closeGameButton = document.querySelector('#close-game');
+
+        // Show game overlay
+        heroButton.addEventListener('click', () => {
+            gameOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+
+        // Hide game overlay
+        closeGameButton.addEventListener('click', () => {
+            gameOverlay.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+    });
+</script>
+
+</html>
+
+<style>
+    /* 确保按钮容器占据其父元素的全部宽度 */
+    .button-container {
+        width: 100%;
+        text-align: right;
+        /* 将内容右对齐 */
+    }
+
+    /* 设置按钮的基本样式 */
+    .fullscreen-button {
+        padding: 10px 20px;
+        /* 内边距 */
+        font-size: 16px;
+        /* 字体大小 */
+        cursor: pointer;
+        /* 鼠标悬停时显示为手形 */
+        border: none;
+        /* 去除边框 */
+        border-radius: 5px;
+        /* 圆角 */
+        transition: background-color 0.3s ease;
+        /* 背景色过渡效果 */
+    }
+
+    /* 绿色风格按钮 */
+    .green-button {
+        background-color: #4CAF50;
+        /* 绿色背景 */
+        color: white;
+        /* 白色文字 */
+    }
+
+    /* 鼠标悬停在绿色按钮上时改变背景色 */
+    .green-button:hover {
+        background-color: #45a049;
+        /* 更深的绿色 */
+    }
+</style>
