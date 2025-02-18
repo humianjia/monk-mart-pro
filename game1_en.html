@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey Mart</title>
+    <meta name="description" content="Control the adorable monkey character running a supermarket.">
+    <meta name="keywords" content="Sprunki, Incredibox, Fan-Made Mod, Music-Mixing, Sound Loops, Musical Compositions, Drag-and-drop Interface">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4CAF50',
+                        secondary: '#2E7D32',
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gradient-to-r from-green-100 via-white to-emerald-100">
+    <section class="relative top-0 left-0 right-0 z-[1000] bg-white/50 backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
+                        Monkey Mart
+                    </h1>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="game1.html" class="text-gray-600 hover:text-green-500 transition-colors">Home</a>
+                    <a href="guide.html" class="text-gray-600 hover:text-green-500 transition-colors">Game Introduction</a>
+                    <a href="advanced.html" class="text-gray-600 hover:text-green-500 transition-colors">Game Tips</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-green-500 transition-colors">Blog</a>
+                </nav>
+
+                <!-- Language Selector -->
+                <div class="relative" x-data="{ open: false }">
+                    <button @click="open = !open" @click.away="open = false"
+                        class="flex items-center space-x-2 px-4 py-2 rounded-full bg-white/80 shadow-sm border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition-all duration-300">
+                        <span class="text-sm text-gray-600">English</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-gray-600 transform transition-transform duration-200"
+                            :class="{ 'rotate-180': open }">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                        class="absolute right-0 mt-2 w-48 rounded-xl bg-white shadow-lg border border-gray-100 py-2 z-[1001]">
+                        <a href="game1.html"
+                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50">
+                            简体中文
+                        </a>
+                        <a href="game1_en.html"
+                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50">
+                            English
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section -->
+    <section class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-6">
+                    <h1 class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                        Monkey Mart
+                    </h1>
+                    <p class="text-xl md:text-lg text-gray-500 font-medium">
+                        Welcome to Monkey Mart - a fun-filled tropical supermarket world! Here, you will take on the role of a clever monkey boss, leading your monkey team on a business adventure.
+                        Imagine your store attracting cute customers: mischievous little monkeys and banana-loving birds, all while you carefully select products and design layouts to entice them to keep coming back.
+                        Complete fun tasks, unlock props and decorations, upgrade your store level, and become the star of the market! You can also compete with your friends to see who can stand out in this bustling market.
+                        Whether you are a newcomer or a veteran player, Monkey Mart will bring you endless fun and creativity!
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6">
+                                <circle cx="12" cy="12" r="10" stroke="none" fill="currentColor"/>
+                                <path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-600 leading-relaxed">Easy and funny gameplay allows you to find joy even in the busiest moments!</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6">
+                                <circle cx="12" cy="12" r="10" stroke="none" fill="currentColor"/>
+                                <path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-600 leading-relaxed">A test of intelligence, mastering resource management to become a savvy little businessman and reap great rewards!</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6">
+                                <circle cx="12" cy="12" r="10" stroke="none" fill="currentColor"/>
+                                <path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            <div class="ml-3">
+                                <p class="text-sm text-gray-600 leading-relaxed">Cartoon characters and colorful scenes make every game feel like a fairy tale adventure!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Content -->
+                <div class="relative">
+                    <img src="your_image_path_here.png" alt="Monkey Mart" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
