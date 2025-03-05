@@ -1,0 +1,155 @@
+<!-- 日语版 advanced_ja.html -->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上級者向け攻略 - Monkey Mart</title>
+    <meta name="description" content="Monkey Martの上級者向け攻略でゲームプレイを向上させましょう">
+    <meta name="keywords" content="Monkey Mart, スーパーマーケット, 経営, ゲーム, 上級者">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4CAF50',
+                        secondary: '#2E7D32',
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gradient-to-r from-green-100 via-white to-emerald-100">
+    <section class="relative top-0 left-0 right-0 z-[1000] bg-white/50 backdrop-blur-sm border-b border-gray-100">
+        <div class="bg-white/50 backdrop-blur-sm border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex-shrink-0">
+                        <a href="index.html"
+                            class="text-2xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
+                            Monkey Mart
+                        </a>
+                    </div>
+
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="index.html" class="text-gray-600 hover:text-green-500 transition-colors">ホーム</a>
+                        <a href="guide.html" class="text-gray-600 hover:text-green-500 transition-colors">ガイド</a>
+                        <a href="advanced_ja.html" class="text-gray-600 hover:text-green-500 transition-colors">上級者向け</a>
+                        <a href="blog.html" class="text-gray-600 hover:text-green-500 transition-colors">ブログ</a>
+                    </nav>
+
+                    <div class="relative" x-data="{ open: false }">
+                        <button @click="open = !open"
+                            class="flex items-center text-gray-600 hover:text-green-500 transition-colors">
+                            <span class="mr-1">日本語</span>
+                            <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div x-show="open" @click.away="open = false"
+                            class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-lg">
+                            <a href="advanced.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</a>
+                            <a href="advanced_ch.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">简体中文</a>
+                            <a href="advanced_ja.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">日本語</a>
+                            <a href="advanced_ko.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">한국어</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">上級者ガイド</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Monkey Martでは、すべての年齢層が異なる楽しみ方を発見できます。各層の特徴をご紹介します：
+            </p>
+
+            <h3 class="text-2xl font-semibold">子供（6-12歳）</h3>
+            <ul class="list-disc list-inside space-y-2 mb-6">
+                <li>直感的操作：基本管理スキルを学べるシンプルな操作性</li>
+                <li>可愛いキャラクター：子供の興味を引くサルと動物たち</li>
+                <li>創造性育成：自由なカスタマイズで個性を表現</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold">青少年（13-18歳）</h3>
+            <ul class="list-disc list-inside space-y-2 mb-6">
+                <li>戦略的経営：スーパーマーケット効率化のための計画立案</li>
+                <li>フレンドリー競争：友人と進捗を比較可能</li>
+                <li>アチーブメント：特別報酬獲得のための挑戦</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold">成人（19-35歳）</h3>
+            <ul class="list-disc list-inside space-y-2 mb-6">
+                <li>ストレス解消：日常からのリラクゼーション空間を提供</li>
+                <li>財務管理：予算管理とリソース配分の実践</li>
+                <li>進化システム：店舗拡張による達成感</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold">中高年（36歳以上）</h3>
+            <ul class="list-disc list-inside space-y-2 mb-6">
+                <li>アクセシブル設計：技術レベル問わず楽しめる操作性</li>
+                <li>ソーシャル：家族とのマルチプレイ体験</li>
+                <li>認知トレーニング：経営を通じた脳活性化</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold">いたずら猿の影響</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                迷惑をかける猿の行動パターン：
+            </p>
+            <ul class="list-disc list-inside space-y-2 mb-6">
+                <li>客動線妨害：商品棚前での滞在</li>
+                <li>評価低下：顧客満足度-20%</li>
+                <li>管理難易度：追加対応時間が必要</li>
+                <li>特殊イベント：5%確率で発生</li>
+                <li>スタッフ配置：最適化が必要</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold">ゴミ箱の機能</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                ゴミ箱の主要な使用方法：
+            </p>
+            <ul class="list-disc list-inside space-y-2 mb-6">
+                <li>在庫管理：不良品処理効率+35%</li>
+                <li>スペース最適化：売場面積活用率向上</li>
+                <li>顧客満足：不満要素を50%削減</li>
+                <li>猿対策：いたずら発生率-15%</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold">レジ2台の効果</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                ダブルレジシステムのメリット：
+            </p>
+            <ul class="list-disc list-inside space-y-2 mb-6">
+                <li>待ち時間短縮：平均-55%</li>
+                <li>売上増加：時間当たり+22%</li>
+                <li>ピーク対応：混雑時処理能力2倍</li>
+                <li>シフト管理：スタッフローテーション可能</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold">会計待ち列の力学</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                顧客の待機許容時間に影響する要素：
+            </p>
+            <ul class="list-disc list-inside space-y-2 mb-6">
+                <li>待機時間限界：最大30秒</li>
+                <li>レジ増設効果：1台追加ごとに-40%</li>
+                <li>従業員訓練：処理速度+25%</li>
+                <li>混雑対策：動的スタッフ配置</li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Guide - Monkey Mart</title>
-    <meta name="description" content="Control an adorable monkey running a newly opened supermarket">
-    <meta name="keywords" content="Monkey Mart, Supermarket, Simulation Game, Gaming">
+    <title>게임 가이드 - Monkey Mart</title>
+    <meta name="description" content="새로 오픈한 슈퍼마켓을 운영하는 귀여운 원숭이 캐릭터 조작">
+    <meta name="keywords" content="몽키 마트, 슈퍼마켓, 시뮬레이션 게임, 게임">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -19,7 +19,7 @@
                         secondary: '#2E7D32',
                     },
                     fontFamily: {
-                        sans: ['Noto Sans SC', 'sans-serif'],
+                        sans: ['Noto Sans KR', 'sans-serif'],
                     },
                 }
             }
@@ -28,7 +28,7 @@
 </head>
 
 <body class="bg-gradient-to-r from-green-100 via-white to-emerald-100">
-    <!-- Navigation Bar -->
+    <!-- 네비게이션 바 -->
     <section class="relative top-0 left-0 right-0 z-[1000] bg-white/50 backdrop-blur-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -39,15 +39,15 @@
                     </h1>
                 </div>
 
-                <!-- Navigation Links -->
+                <!-- 네비게이션 링크 -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-green-500 transition-colors">Home</a>
-                    <a href="guide.html" class="text-gray-600 hover:text-green-500 transition-colors">Game Guide</a>
-                    <a href="advanced.html" class="text-gray-600 hover:text-green-500 transition-colors">Advanced Tips</a>
-                    <a href="blog.html" class="text-gray-600 hover:text-green-500 transition-colors">Blog</a>
+                    <a href="index.html" class="text-gray-600 hover:text-green-500 transition-colors">홈</a>
+                    <a href="guide.html" class="text-gray-600 hover:text-green-500 transition-colors">게임 가이드</a>
+                    <a href="advanced.html" class="text-gray-600 hover:text-green-500 transition-colors">고급 전략</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-green-500 transition-colors">블로그</a>
                 </nav>
 
-                <!-- Language Selector -->
+                <!-- 언어 선택기 -->
                 <div class="relative" x-data="{ open: false }">
                     <button @click="open = !open" @click.away="open = false" class="flex items-center space-x-2 px-4 py-2 rounded-full bg-white/80 shadow-sm border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600">
@@ -58,13 +58,13 @@
                             <path d="m22 22-5-10-5 10"/>
                             <path d="M14 18h6"/>
                         </svg>
-                        <span class="text-sm text-gray-600">English</span>
+                        <span class="text-sm text-gray-600">한국어</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 transform transition-transform duration-200" :class="{ 'rotate-180': open }">
                             <path d="m6 9 6 6 6-6"/>
                         </svg>
                     </button>
 
-                    <!-- Dropdown Menu -->
+                    <!-- 드롭다운 메뉴 -->
                     <div x-show="open" class="absolute right-0 mt-2 w-48 rounded-xl bg-white shadow-lg border border-gray-100 py-2 z-[1001]">
                         <a href="guide.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50">
                             English
@@ -86,22 +86,22 @@
 
     <section class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Game Overview</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">게임 소개</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
                     <p class="text-lg text-gray-700 leading-relaxed">
-                        Welcome to Monkey Mart! In this vibrant tropical store world, you'll play as a clever monkey boss leading your primate team through a business adventure. Imagine your store by a sunny beach attracting adorable customers: mischievous baby monkeys and banana-loving tropical birds. Your mission is to curate products, design layouts, and keep customers coming back for more!
+                        Monkey Mart에 오신 것을 환영합니다! 화창한 해변가 슈퍼마켓에서 영리한 원숭이 사장님이 되어 팀을 이끌고 경영 모험을 즐기세요. 장난꾸러기 아기 원숭이와 바나나를 좋아하는 열대새들이 찾아오는 매장에서 상품을 선별하고 레이아웃을 디자인하여 고객을 유치하세요!
                     </p>
-                    <h3 class="text-2xl font-semibold">Key Features</h3>
+                    <h3 class="text-2xl font-semibold">주요 기능</h3>
                     <ul class="list-disc list-inside space-y-2">
-                        <li>Whimsical & Lighthearted Gameplay - Find joy in the chaos with hilarious moments!</li>
-                        <li>Strategic Resource Management - Master smart decisions to become a retail prodigy!</li>
-                        <li>Charming Cartoon World - Vibrant colors and lively characters create fairytale-like adventures!</li>
-                        <li>Friendly Competition - Battle friends to claim the Retail Champion title!</li>
+                        <li>유쾌한 게임플레이 - 바쁜 와중에도 웃음이 가득!</li>
+                        <li>전략적 자원 관리 - 현명한 선택으로 슈퍼마켓 마스터!</li>
+                        <li>생동감 넘치는 캐릭터 - 동화 속 세계에 온 듯한 경험!</li>
+                        <li>친구와의 대전 - 진정한 판매 챔피언은 누구?</li>
                     </ul>
                 </div>
                 <div>
-                    <img src="01.open01.png" alt="Game Screenshot" class="rounded-lg shadow-lg">
+                    <img src="01.open01.png" alt="게임 스크린샷" class="rounded-lg shadow-lg">
                 </div>
             </div>
         </div>

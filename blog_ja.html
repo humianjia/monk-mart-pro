@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Blog - Monkey Mart</title>
-    <meta name="description" content="Monkey Mart development updates and game patches">
+    <title>開発ブログ - Monkey Mart</title>
+    <meta name="description" content="Monkey Martの開発ログとアップデート情報">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -18,7 +18,7 @@
                         secondary: '#2E7D32',
                     },
                     fontFamily: {
-                        sans: ['Noto Sans SC', 'sans-serif'],
+                        sans: ['Noto Sans JP', 'sans-serif'],
                     },
                 }
             }
@@ -27,7 +27,7 @@
 </head>
 
 <body class="bg-gradient-to-r from-green-100 via-white to-emerald-100">
-    <!-- Navigation Bar -->
+    <!-- ナビゲーションバー -->
     <section class="relative top-0 left-0 right-0 z-[1000] bg-white/50 backdrop-blur-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -38,15 +38,15 @@
                     </h1>
                 </div>
 
-                <!-- Navigation Links -->
+                <!-- ナビゲーションリンク -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-green-500 transition-colors">Home</a>
-                    <a href="guide.html" class="text-gray-600 hover:text-green-500 transition-colors">Game Guide</a>
-                    <a href="advanced.html" class="text-gray-600 hover:text-green-500 transition-colors">Advanced Tips</a>
-                    <a href="blog.html" class="text-gray-600 hover:text-green-500 transition-colors">Blog</a>
+                    <a href="index.html" class="text-gray-600 hover:text-green-500 transition-colors">ホーム</a>
+                    <a href="guide.html" class="text-gray-600 hover:text-green-500 transition-colors">ゲームガイド</a>
+                    <a href="advanced.html" class="text-gray-600 hover:text-green-500 transition-colors">上級者向け</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-green-500 transition-colors">ブログ</a>
                 </nav>
 
-                <!-- Language Selector -->
+                <!-- 言語選択 -->
                 <div class="relative" x-data="{ open: false }">
                     <button @click="open = !open" @click.away="open = false" class="flex items-center space-x-2 px-4 py-2 rounded-full bg-white/80 shadow-sm border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600">
@@ -57,13 +57,13 @@
                             <path d="m22 22-5-10-5 10"/>
                             <path d="M14 18h6"/>
                         </svg>
-                        <span class="text-sm text-gray-600">English</span>
+                        <span class="text-sm text-gray-600">日本語</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 transform transition-transform duration-200" :class="{ 'rotate-180': open }">
                             <path d="m6 9 6 6 6-6"/>
                         </svg>
                     </button>
 
-                    <!-- Dropdown Menu -->
+                    <!-- ドロップダウンメニュー -->
                     <div x-show="open" class="absolute right-0 mt-2 w-48 rounded-xl bg-white shadow-lg border border-gray-100 py-2 z-[1001]">
                         <a href="blog_ch.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50">
                             简体中文
@@ -83,50 +83,49 @@
         </div>
     </section>
 
-    <!-- Blog Articles -->
+    <!-- ブログ記事 -->
     <section class="py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Article 1 -->
+                <!-- 記事1 -->
                 <article class="bg-white/50 backdrop-blur-sm rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300">
                     <div class="relative h-48 bg-green-500">
-                        <img src="blog1.jpeg" alt="Game Guide" class="w-full h-full object-cover">
+                        <img src="blog1.jpeg" alt="総合ガイド" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     </div>
                     <div class="p-6">
                         <h2 class="text-xl font-bold mb-2 bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
-                            Monkey Mart Tips & Tricks: The Complete Guide
+                            Monkey Martの極意：完全ガイド
                         </h2>
                         <p class="text-gray-600 mb-4">
-                            Are you a fan of simulation games? Do you enjoy managing businesses and making profits? If your answer is yes, then you must have heard of Monkey Mart. This popular mobile game lets players run their own grocery stores and earn money by selling products to customers.
+                            シミュレーションゲームがお好きですか？経営して利益を上げるのが楽しいですか？それならMonkey Martをご存知でしょう。この人気モバイルゲームでは、プレイヤーが食料品店を経営し、顧客に商品を販売して稼ぎます。
                         </p>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-500">2023-12-10</span>
-                            <a href="https://monkeymart.org/tips-and-tricks-to-play-monkey-mart-a-comprehensive-guide/" class="text-green-500 hover:text-green-600 font-medium">Read More →</a>
+                            <a href="https://monkeymart.org/tips-and-tricks-to-play-monkey-mart-a-comprehensive-guide/" class="text-green-500 hover:text-green-600 font-medium">続きを読む →</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Article 2 -->
+                <!-- 記事2 -->
                 <article class="bg-white/50 backdrop-blur-sm rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300">
                     <div class="relative h-48 bg-green-500">
-                        <img src="blog2.png" alt="Dev Log" class="w-full h-full object-cover">
+                        <img src="blog2.png" alt="開発ログ" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     </div>
                     <div class="p-6">
                         <h2 class="text-xl font-bold mb-2 bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
-                            Monkey Mart: Play Free Online Games on MonkeyMart.org
+                            MonkeyMart.orgで無料オンラインゲームをプレイ
                         </h2>
                         <p class="text-gray-600 mb-4">
-                            Looking for a fun way to pass time? Monkey Mart has you covered! This online gaming platform lets you play free games directly from your web browser. MonkeyMart.org offers a variety of games for every taste. In this article, we'll explore what makes it a great choice for anyone seeking entertainment and stress relief.
+                            楽しい時間の過ごし方を探していますか？Monkey Martが解決します！このオンラインゲームプラットフォームでは、ウェブブラウザから直接無料ゲームがプレイできます。MonkeyMart.orgでは様々なジャンルのゲームを提供。エンターテイメントとストレス解消に最適な理由をご紹介します。
                         </p>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-500">2023-12-10</span>
-                            <a href="https://monkeymart.org/monkey-mart-play-free-games-online-on-monkeymart-org/" class="text-green-500 hover:text-green-600 font-medium">Read More →</a>
+                            <a href="https://monkeymart.org/monkey-mart-play-free-games-online-on-monkeymart-org/" class="text-green-500 hover:text-green-600 font-medium">続きを読む →</a>
                         </div>
                     </div>
                 </article>
-
             </div>
         </div>
     </section>

@@ -5,13 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monkey Mart</title>
-    <meta name="description" content="Control the adorable monkey character running a supermarket.">
-    <meta name="keywords" content="Sprunki, Incredibox, Fan-Made Mod, Music-Mixing, Sound Loops, Musical Compositions, Drag-and-drop Interface">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <script>
-        tailwind.config = {
+        // Tailwind CSS configuration
+        module.exports = {
             theme: {
                 extend: {
                     colors: {
@@ -42,7 +39,7 @@
                 <nav class="hidden md:flex space-x-8">
                     <a href="game1.html" class="text-gray-600 hover:text-green-500 transition-colors">Home</a>
                     <a href="guide.html" class="text-gray-600 hover:text-green-500 transition-colors">Game Introduction</a>
-                    <a href="advanced.html" class="text-gray-600 hover:text-green-500 transition-colors">Game Tips</a>
+                    <a href="advanced.html" class="text-gray-600 hover:text-green-500 transition-colors">Game Advanced</a>
                     <a href="blog.html" class="text-gray-600 hover:text-green-500 transition-colors">Blog</a>
                 </nav>
 
@@ -65,13 +62,17 @@
                         x-transition:leave="transition ease-in duration-150"
                         x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
                         class="absolute right-0 mt-2 w-48 rounded-xl bg-white shadow-lg border border-gray-100 py-2 z-[1001]">
-                        <a href="game1.html"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50">
+                            English
+                        </a>
+                        <a href="game1.html" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50">
                             简体中文
                         </a>
-                        <a href="game1_en.html"
-                            class="block px-4 py-2 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50">
-                            English
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50">
+                            日本語
+                        </a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50">
+                            한국어
                         </a>
                     </div>
                 </div>
@@ -84,58 +85,28 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Left Content -->
                 <div class="space-y-6">
-                    <h1 class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                        Monkey Mart
-                    </h1>
-                    <p class="text-xl md:text-lg text-gray-500 font-medium">
-                        Welcome to Monkey Mart - a fun-filled tropical supermarket world! Here, you will take on the role of a clever monkey boss, leading your monkey team on a business adventure.
-                        Imagine your store attracting cute customers: mischievous little monkeys and banana-loving birds, all while you carefully select products and design layouts to entice them to keep coming back.
-                        Complete fun tasks, unlock props and decorations, upgrade your store level, and become the star of the market! You can also compete with your friends to see who can stand out in this bustling market.
-                        Whether you are a newcomer or a veteran player, Monkey Mart will bring you endless fun and creativity!
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6">
-                                <circle cx="12" cy="12" r="10" stroke="none" fill="currentColor"/>
-                                <path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M10 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M14 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg>
-                            <div class="ml-3">
-                                <p class="text-sm text-gray-600 leading-relaxed">Easy and funny gameplay allows you to find joy even in the busiest moments!</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6">
-                                <circle cx="12" cy="12" r="10" stroke="none" fill="currentColor"/>
-                                <path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M10 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M14 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg>
-                            <div class="ml-3">
-                                <p class="text-sm text-gray-600 leading-relaxed">A test of intelligence, mastering resource management to become a savvy little businessman and reap great rewards!</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6">
-                                <circle cx="12" cy="12" r="10" stroke="none" fill="currentColor"/>
-                                <path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M10 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M14 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg>
-                            <div class="ml-3">
-                                <p class="text-sm text-gray-600 leading-relaxed">Cartoon characters and colorful scenes make every game feel like a fairy tale adventure!</p>
-                            </div>
-                        </div>
-                    </div>
+                    <h2 class="text-3xl font-bold">Welcome to Monkey Mart</h2>
+                    <p class="text-lg">Experience the best games and enjoy your time!</p>
                 </div>
-                <!-- Right Content -->
-                <div class="relative">
-                    <img src="your_image_path_here.png" alt="Monkey Mart" class="rounded-lg shadow-lg">
+                <!-- Right Video -->
+                <div class="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
+                    <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/video_id" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
+    <!-- FAQ Section -->
+    <section>
+        <h2>Frequently Asked Questions</h2>
+        <p>Find answers to your questions here.</p>
+    </section>
+
+    <!-- TikTok Embed Script -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Monkey Mart. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Blog - Monkey Mart</title>
-    <meta name="description" content="Monkey Mart development updates and game patches">
+    <title>开发博客 - Monkey Mart</title>
+    <meta name="description" content="Monkey Mart开发日志和游戏更新">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
 </head>
 
 <body class="bg-gradient-to-r from-green-100 via-white to-emerald-100">
-    <!-- Navigation Bar -->
+    <!-- 导航栏 -->
     <section class="relative top-0 left-0 right-0 z-[1000] bg-white/50 backdrop-blur-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -40,10 +40,10 @@
 
                 <!-- Navigation Links -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-600 hover:text-green-500 transition-colors">Home</a>
-                    <a href="guide.html" class="text-gray-600 hover:text-green-500 transition-colors">Game Guide</a>
-                    <a href="advanced.html" class="text-gray-600 hover:text-green-500 transition-colors">Advanced Tips</a>
-                    <a href="blog.html" class="text-gray-600 hover:text-green-500 transition-colors">Blog</a>
+                    <a href="index.html" class="text-gray-600 hover:text-green-500 transition-colors">首页</a>
+                    <a href="guide.html" class="text-gray-600 hover:text-green-500 transition-colors">游戏介绍</a>
+                    <a href="advanced.html" class="text-gray-600 hover:text-green-500 transition-colors">游戏进阶</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-green-500 transition-colors">博客</a>
                 </nav>
 
                 <!-- Language Selector -->
@@ -57,7 +57,7 @@
                             <path d="m22 22-5-10-5 10"/>
                             <path d="M14 18h6"/>
                         </svg>
-                        <span class="text-sm text-gray-600">English</span>
+                        <span class="text-sm text-gray-600">简体中文</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 transform transition-transform duration-200" :class="{ 'rotate-180': open }">
                             <path d="m6 9 6 6 6-6"/>
                         </svg>
@@ -83,46 +83,52 @@
         </div>
     </section>
 
-    <!-- Blog Articles -->
+    <!-- 博客文章列表 -->
     <section class="py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Article 1 -->
+                <!-- 文章1 -->
                 <article class="bg-white/50 backdrop-blur-sm rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300">
                     <div class="relative h-48 bg-green-500">
-                        <img src="blog1.jpeg" alt="Game Guide" class="w-full h-full object-cover">
+                        <img src="blog1.jpeg" alt="综合指南" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <!-- <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block px-3 py-1 bg-green-500 text-white text-sm rounded-full">更新预告</span>
+                        </div> -->
                     </div>
                     <div class="p-6">
                         <h2 class="text-xl font-bold mb-2 bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
-                            Monkey Mart Tips & Tricks: The Complete Guide
+                            玩 Monkey Mart 的技巧和窍门：综合指南
                         </h2>
                         <p class="text-gray-600 mb-4">
-                            Are you a fan of simulation games? Do you enjoy managing businesses and making profits? If your answer is yes, then you must have heard of Monkey Mart. This popular mobile game lets players run their own grocery stores and earn money by selling products to customers.
+                            你是模拟游戏的粉丝吗？你喜欢管理企业并赚取利润吗？如果你的答案是肯定的，那么你一定听说过 Monkey Mart。这是一款流行的手机游戏，玩家经营自己的杂货店并通过向顾客出售商品来赚钱。
                         </p>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-500">2023-12-10</span>
-                            <a href="https://monkeymart.org/tips-and-tricks-to-play-monkey-mart-a-comprehensive-guide/" class="text-green-500 hover:text-green-600 font-medium">Read More →</a>
+                            <a href="https://monkeymart.org/tips-and-tricks-to-play-monkey-mart-a-comprehensive-guide/" class="text-green-500 hover:text-green-600 font-medium">阅读更多 →</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Article 2 -->
+                <!-- 文章2 -->
                 <article class="bg-white/50 backdrop-blur-sm rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300">
                     <div class="relative h-48 bg-green-500">
-                        <img src="blog2.png" alt="Dev Log" class="w-full h-full object-cover">
+                        <img src="blog2.png" alt="开发日志" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <!-- <div class="absolute bottom-4 left-4 right-4">
+                            <span class="inline-block px-3 py-1 bg-green-500 text-white text-sm rounded-full">开发日志</span>
+                        </div> -->
                     </div>
                     <div class="p-6">
                         <h2 class="text-xl font-bold mb-2 bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
-                            Monkey Mart: Play Free Online Games on MonkeyMart.org
+                            Monkey Mart：在 MonkeyMart.org 上免费玩在线游戏
                         </h2>
                         <p class="text-gray-600 mb-4">
-                            Looking for a fun way to pass time? Monkey Mart has you covered! This online gaming platform lets you play free games directly from your web browser. MonkeyMart.org offers a variety of games for every taste. In this article, we'll explore what makes it a great choice for anyone seeking entertainment and stress relief.
+                            您是否正在寻找一种有趣的消遣方式？ Monkey Mart就是您的不二之选！这个 在线游戏平台允许您直接从网络浏览器玩免费游戏。MonkeyMart.org 提供各种游戏，每个人都能找到适合自己的游戏。在本文中，我们将仔细研究 Monkey Mart 提供的服务，以及为什么它是任何想要找点乐子并缓解压力的人的绝佳选择。
                         </p>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-500">2023-12-10</span>
-                            <a href="https://monkeymart.org/monkey-mart-play-free-games-online-on-monkeymart-org/" class="text-green-500 hover:text-green-600 font-medium">Read More →</a>
+                            <a href="https://monkeymart.org/monkey-mart-play-free-games-online-on-monkeymart-org/" class="text-green-500 hover:text-green-600 font-medium">阅读更多 →</a>
                         </div>
                     </div>
                 </article>

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monkey Mart</title>
-    <meta name="description" content="Control cute monkey characters running a new supermarket">
+    <meta name="description" content="控制刚开超市的可爱猴子角色">
     <meta name="keywords"
         content="Sprunki, Incredibox, Fan-Made Mod, Music-Mixing, Sound Loops, Musical Compositions, Drag-and-drop Interface">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -20,7 +20,7 @@
                         secondary: '#2E7D32',
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Noto Sans SC', 'sans-serif'],
                     },
                 }
             }
@@ -28,23 +28,25 @@
     </script>
 </head>
 
+
 <body class="bg-gradient-to-r from-green-100 via-white to-emerald-100">
     <section class="relative top-0 left-0 right-0 z-[1000] bg-white/50 backdrop-blur-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <h1 class="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
+                    <h1
+                        class="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
                         Monkey Mart
                     </h1>
                 </div>
 
                 <!-- Navigation Links -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="game1.html" class="text-gray-600 hover:text-green-500 transition-colors">Home</a>
-                    <a href="guide.html" class="text-gray-600 hover:text-green-500 transition-colors">Guide</a>
-                    <a href="advanced.html" class="text-gray-600 hover:text-green-500 transition-colors">Advanced Tips</a>
-                    <a href="blog.html" class="text-gray-600 hover:text-green-500 transition-colors">Blog</a>
+                    <a href="game1.html" class="text-gray-600 hover:text-green-500 transition-colors">首页</a>
+                    <a href="guide.html" class="text-gray-600 hover:text-green-500 transition-colors">游戏介绍</a>
+                    <a href="advanced.html" class="text-gray-600 hover:text-green-500 transition-colors">游戏进阶</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-green-500 transition-colors">博客</a>
                 </nav>
 
                 <!-- Language Selector -->
@@ -61,7 +63,7 @@
                             <path d="m22 22-5-10-5 10" />
                             <path d="M14 18h6" />
                         </svg>
-                        <span class="text-sm text-gray-600">English</span>
+                        <span class="text-sm text-gray-600">简体中文</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="text-gray-600 transform transition-transform duration-200"
@@ -97,21 +99,21 @@
             </div>
         </div>
     </section>
-
     <!-- Hero Section -->
     <section class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Left Content -->
                 <div class="space-y-6">
-                    <h1 class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    <h1
+                        class="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                         Monkey Mart
                     </h1>
                     <p class="text-xl md:text-lg text-gray-500 font-medium">
-                        Welcome to Monkey Mart – a tropical store management adventure! Play as a smart monkey boss managing a team in this vibrant supermarket world. 
-                        Set on a sunny beach, attract adorable customers like mischievous monkeys and banana-loving birds. Strategize product selection, 
-                        design layouts, and complete fun tasks to unlock upgrades. Compete with friends and become the market star! Perfect for both casual 
-                        players and seasoned strategists, Monkey Mart offers endless fun and creativity!
+                        欢迎来到《Monkey Mart》——一个充满欢乐的热带商店世界！在这里，你将化身为聪明的猴子老板，带领猴子团队开启经营冒险。
+                        想象一下，在阳光明媚的海滩旁，你的商店吸引着可爱的顾客：调皮的小猴子和爱吃香蕉的小鸟。你的任务是精心挑选商品、设计布局，吸引顾客，让他们不断光顾。
+                        完成有趣的任务，解锁道具与装饰，提升商店等级，成为市场的明星！你还可以与朋友们一较高下，看看谁能在这个热闹的市场中脱颖而出。
+                        无论你是新手还是老玩家，《Monkey Mart》都能带给你无尽的乐趣与创意！
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-start">
@@ -122,7 +124,7 @@
                                 <path d="M14 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>
                             <div class="ml-3">
-                                <p class="text-sm text-gray-600 leading-relaxed">Easy and hilarious gameplay that brings joy to your busy days!</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">轻松搞笑的玩法，让你在忙碌中也能找到乐趣，尽情享受其中的欢笑！</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -133,7 +135,7 @@
                                 <path d="M14 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>
                             <div class="ml-3">
-                                <p class="text-sm text-gray-600 leading-relaxed">Resource management challenges that train your business acumen</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">智慧大考验，学会巧妙管理资源，成为超聪明的小商人，收获丰厚的回报！</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -144,7 +146,7 @@
                                 <path d="M14 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>
                             <div class="ml-3">
-                                <p class="text-sm text-gray-600 leading-relaxed">Vivid cartoon characters and colorful scenes straight from a storybook</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">卡通角色栩栩如生，色彩斑斓的场景让每次游戏仿佛置身童话冒险！</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -155,67 +157,160 @@
                                 <path d="M14 16a2 2 0 0 1-4 0 2 2 0 0 1 4 0z" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>
                             <div class="ml-3">
-                                <p class="text-sm text-gray-600 leading-relaxed">Compete with friends to see who's the ultimate sales champion!</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">与好友一决高下，谁才是销售之王？紧张刺激，乐趣无穷，等你来挑战！</p>
                             </div>
                         </div>
                     </div>
                     <div class="pt-1">
                         <a href="#section2"
                             class="inline-flex items-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-                            Start Game
+                            开始游戏
                         </a>
                     </div>
                 </div>
-
-                <!-- Right Content (Carousel remains same) -->
-                <!-- ... Carousel HTML remains unchanged ... -->
+                <!-- Right Video -->
+                <!-- <div class="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 z-0"></div>
+                    <iframe class="absolute inset-[2px] w-[calc(100%-4px)] h-[calc(100%-4px)] rounded-2xl z-10"
+                        src="https://youtu.be/KsyQBXdkAuM"
+                        title="Sprunki Gameplay Video" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div> -->
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"><img src="01.open01.png" alt="Image 1"></div>
+                        <!-- <div class="carousel-item"><img src="image2.jpg" alt="Image 2"></div>
+                        <div class="carousel-item"><img src="image3.jpg" alt="Image 3"></div> -->
+                    </div>
+                    <button class="carousel-control prev" onclick="prevSlide()">&lt;</button>
+                    <button class="carousel-control next" onclick="nextSlide()">&gt;</button>
+                </div>
             </div>
         </div>
+        <script>
+            let currentIndex = 0;
+            function showSlide(index) {
+                const slides = document.querySelectorAll('.carousel-item');
+                const totalSlides = slides.length;
 
-        <!-- Feature Cards -->
+                if (index >= totalSlides) {
+                    currentIndex = 0;
+                } else if (index < 0) {
+                    currentIndex = totalSlides - 1;
+                } else {
+                    currentIndex = index;
+                }
+
+                const offset = -currentIndex * 100 + '%';
+                document.querySelector('.carousel-inner').style.transform = `translateX(${offset})`;
+            }
+
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentIndex - 1);
+            }
+
+            // 自动播放轮播图（可选）
+            setInterval(nextSlide, 3000); // 每3秒切换一次
+        </script>
+        <style>
+            .carousel {
+                position: relative;
+                width: 80%;
+                max-width: 800px;
+                overflow: hidden;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .carousel-inner {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .carousel-item {
+                min-width: 100%;
+                box-sizing: border-box;
+            }
+
+            .carousel-item img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            .carousel-control {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                z-index: 10;
+            }
+
+            .carousel-control.prev {
+                left: 10px;
+            }
+
+            .carousel-control.next {
+                right: 10px;
+            }
+        </style>
         <div class="w-full mx-auto px-4 sm:px-6 lg:px-8 pt-16">
             <div class="flex space-x-6 overflow-x-auto pb-4 scrollbar-hide">
+                <!-- 动态音乐体验 -->
                 <div class="flex-none w-72 p-4 rounded-xl border-2 border-green-500/30 bg-white/50 backdrop-blur-sm">
-                    <h3 class="text-lg font-bold mb-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
-                        Monkey Business Management
+                    <h3
+                        class="text-lg font-bold mb-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
+                        猴子经营超市
                     </h3>
-                    <p class="text-sm text-gray-400">Your monkeys don't just sell bananas – they make banana ice cream that customers go nuts for!</p>
+                    <p class="text-sm text-gray-400">在丛林中，你的猴子不仅会卖香蕉，还会用它们做成美味的冰淇淋，顾客绝对乐在其中！</p>
                 </div>
 
+                <!-- 个性角色 -->
                 <div class="flex-none w-72 p-4 rounded-xl border-2 border-emerald-500/30 bg-white/50 backdrop-blur-sm">
-                    <h3 class="text-lg font-bold mb-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
-                        Financial IQ Training
-                    </h3>
-                    <p class="text-sm text-gray-400">Master "monkey math" to turn every coin into more bananas and profits!</p>
+                    <h3
+                        class="text-lg font-bold mb-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
+                        财商训练营</h3>
+                    <p class="text-sm text-gray-400">在这个超市里，学会如何用“猴子逻辑”管理预算，确保每一分钱都能变成更多的香蕉！</p>
                 </div>
 
+                <!-- 创意视觉 -->
                 <div class="flex-none w-72 p-4 rounded-xl border-2 border-green-600/30 bg-white/50 backdrop-blur-sm">
-                    <h3 class="text-lg font-bold mb-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
-                        Character Carnival
-                    </h3>
-                    <p class="text-sm text-gray-400">Meet cashiers who go bananas during rush hour – the fun never stops!</p>
+                    <h3
+                        class="text-lg font-bold mb-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
+                        可爱角色大集合</h3>
+                    <p class="text-sm text-gray-400">可爱的猴子员工们个性十足，收银员可能会因为顾客太多而“猴”得喘不过气来，笑料不断！</p>
                 </div>
 
+                <!-- 自定义关卡 -->
                 <div class="flex-none w-72 p-4 rounded-xl border-2 border-emerald-500/30 bg-white/50 backdrop-blur-sm">
-                    <h3 class="text-lg font-bold mb-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
-                        One-Click Fun
-                    </h3>
-                    <p class="text-sm text-gray-400">Simple controls for maximum monkey business mayhem!</p>
+                    <h3
+                        class="text-lg font-bold mb-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
+                        轻松上手，乐趣无穷</h3>
+                    <p class="text-sm text-gray-400">只需简单点击，就能让你的猴子忙得不可开交，轻松享受经营超市的乐趣，绝对让你爱不释手！</p>
                 </div>
             </div>
         </div>
         <div style="height: 50px; width: 80px;margin-top: 20vh; " id="section2"></div>
     </section>
-
     <!-- How to Play Section -->
     <section class="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/90 to-white/60">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold h-12 mb-8 text-center bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
+            <h2
+                class="text-3xl md:text-4xl font-bold h-12 mb-8 text-center bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
                 Monkey Mart
             </h2>
 
-             <!-- Video Container -->
-             <div class="max-w-4xl mx-auto mb-12">
+            <!-- Video Container -->
+            <div class="max-w-4xl mx-auto mb-12">
                 <div
                     class="aspect-video rounded-xl overflow-hidden p-[5px] bg-gradient-to-br from-green-500 via-emerald-500 to-green-600">
                     <div class="w-full h-full bg-white rounded-lg overflow-hidden">
@@ -231,6 +326,7 @@
                     <button class="fullscreen-button green-button" id="fullscreenBtn">全屏</button>
                 </div>
             </div>
+
             <script>
                 // 获取按钮和iframe的引用
                 const fullscreenBtn = document.getElementById('fullscreenBtn');
@@ -256,53 +352,101 @@
 
             <!-- Instructions Grid -->
             <div class="grid md:grid-cols-3 gap-6 w-full mx-auto">
+                <!-- 开始游戏 -->
                 <div class="bg-white/50 backdrop-blur-sm rounded-xl p-4 border-2 border-green-500/30">
                     <h3 class="flex items-center gap-2 text-lg font-bold mb-3">
-                        <span class="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 text-white text-sm">1</span>
-                        <span class="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">Economic Basics</span>
+                        <span
+                            class="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 text-white text-sm">1</span>
+                        <span
+                            class="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">理解基本经济概念</span>
                     </h3>
                     <ul class="space-y-2 text-sm text-gray-600">
                         <li class="flex items-start">
                             <span class="text-green-500 mr-2">•</span>
-                            Learn supply-demand dynamics through product pricing and inventory management
+                            在游戏中，玩家需要管理超市的收入和支出。通过观察商品价格、销售量和利润，玩家可以学习到基本的经济概念，如供需关系和市场定价。
                         </li>
+                        <!-- <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            点击全屏可以进入全屏模式
+                        </li> -->
+                        <!-- <li class="flex items-start">
+                            <span class="text-green-500 mr-2">•</span>
+                            创作你的第一个节拍
+                        </li> -->
                     </ul>
                 </div>
 
+                <!-- 创作技巧 -->
                 <div class="bg-white/50 backdrop-blur-sm rounded-xl p-4 border-2 border-emerald-500/30">
                     <h3 class="flex items-center gap-2 text-lg font-bold mb-3">
-                        <span class="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 text-white text-sm">2</span>
-                        <span class="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">Budget Mastery</span>
+                        <span
+                            class="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 text-white text-sm">2</span>
+                        <span
+                            class="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">预算管理</span>
                     </h3>
                     <ul class="space-y-2 text-sm text-gray-600">
                         <li class="flex items-start">
                             <span class="text-emerald-500 mr-2">•</span>
-                            Allocate funds wisely between inventory, upgrades, and staff
+                            玩家必须合理分配资金来购买商品、升级设备和雇佣员工。这种预算管理的实践帮助玩家理解如何在有限的资源下做出明智的财务决策。
                         </li>
+                        <!-- <li class="flex items-start">
+                            <span class="text-emerald-500 mr-2">•</span>
+                            尝试不同组合，找到完美混音
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-emerald-500 mr-2">•</span>
+                            使用混音器调整音量和效果
+                        </li> -->
                     </ul>
                 </div>
 
+                <!-- 高级玩法 -->
                 <div class="bg-white/50 backdrop-blur-sm rounded-xl p-4 border-2 border-green-600/30">
                     <h3 class="flex items-center gap-2 text-lg font-bold mb-3">
-                        <span class="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 text-white text-sm">3</span>
-                        <span class="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">Profit Strategies</span>
+                        <span
+                            class="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 text-white text-sm">3</span>
+                        <span
+                            class="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">收益最大化</span>
                     </h3>
                     <ul class="space-y-2 text-sm text-gray-600">
                         <li class="flex items-start">
                             <span class="text-green-600 mr-2">•</span>
-                            Optimize pricing and promotions to maximize revenue
+                            在游戏中，玩家需要制定策略以提高销售额，例如合理定价、促销活动和优化库存。这种收益最大化的思维方式可以培养玩家的商业敏感度。
                         </li>
+                        <!-- <li class="flex items-start">
+                            <span class="text-green-600 mr-2">•</span>
+                            录制并分享你的创作
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">•</span>
+                            与社区互动，获取灵感
+                        </li> -->
                     </ul>
                 </div>
+
+                <!-- <div class="bg-white/50 backdrop-blur-sm rounded-xl p-4 border-2 border-green-600/30">
+                    <h3 class="flex items-center gap-2 text-lg font-bold mb-3">
+                        <span
+                            class="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 text-white text-sm">4</span>
+                        <span
+                            class="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent">投资与回报</span>
+                    </h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">•</span>
+                            通过升级商店和设备，玩家可以看到投资带来的直接回报。这种投资与回报的关系让玩家认识到合理投资的重要性，从而提升财商。
+                        </li>
+                    </ul>
+                </div> -->
             </div>
         </div>
     </section>
- <!-- Spunky Hot Games Section -->
+    <!-- Spunky Hot Games Section -->
     <section class="py-8 pt-4 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/90 to-white/60">
         <div class="max-w-7xl mx-auto">
             <h2
                 class="text-3xl md:text-4xl font-bold h-12 mb-8 text-center bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent">
-                Popular Game Collection
+                热门游戏合集
             </h2>
 
             <!-- Game Grid -->
@@ -726,39 +870,274 @@
             </div>
         </div>
     </section>
+    <!-- Game Moments Section -->
+    <!-- <section class="py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/80 to-white/40">
+        <div class="max-w-6xl mx-auto mb-8">
+            <h2
+                class="text-3xl  md:text-4xl font-bold mb-2 bg-gradient-to-r from-green-500 via-emerald-500 to-green-600 bg-clip-text text-transparent text-left">
+                探索创作者的音乐世界
+            </h2>
+            <p class="text-gray-600 text-lg max-w-5xl text-left">在这里，每一个创作都是独特的音乐故事。来自全球玩家的精彩演绎，展现 Sprunki 无限的创意可能。</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+            <div
+                class="aspect-video rounded-xl overflow-hidden p-[5px] bg-gradient-to-br from-green-500 via-emerald-500 to-green-600">
+                <div class="w-full h-full bg-white rounded-lg overflow-hidden">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/31adFN6Koqo?si=cTKeSdV_OZMHAock"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
 
+            <div
+                class="aspect-video rounded-xl overflow-hidden p-[5px] bg-gradient-to-br from-green-500 via-emerald-500 to-green-600">
+                <div class="w-full h-full bg-white rounded-lg overflow-hidden">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Z8gLf0MHyuE?si=RalPpoDr_GWFSI3o"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div
+                class="aspect-video rounded-xl overflow-hidden p-[5px] bg-gradient-to-br from-green-500 via-emerald-500 to-green-600">
+                <div class="w-full h-full bg-white rounded-lg overflow-hidden">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/s2bsspVgVdk?si=a7MdvudOx-0CRnfG"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- FAQ Section -->
+
+    <!-- TikTok Embed Script -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
     <!-- Footer -->
     <footer class="bg-white/80 py-12 border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Footer Content Grid -->
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
                 <div class="space-y-4">
-                    <h1 class="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
+                    <h1
+                        class="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
                         Monkey Mart
                     </h1>
-                    <p class="text-sm text-gray-600">Join us to build your tropical store empire!</p>
+                    <p class="text-sm text-gray-600">快来加入我们，打造你的热带商店传奇吧！</p>
                 </div>
 
+                <!-- Quick Links -->
+                <!-- <div class="space-y-4">
+                    <h4 class="text-sm font-semibold text-gray-900">快速链接</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">游戏下载</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">新手教程</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">更新日志</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">常见问题</a></li>
+                    </ul>
+                </div> -->
+
+                <!-- Community -->
+                <!-- <div class="space-y-4">
+                    <h4 class="text-sm font-semibold text-gray-900">社区</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">玩家论坛</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">创作分享</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">活动资讯</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-500 transition-colors">反馈建议</a></li>
+                    </ul>
+                </div> -->
+
+                <!-- Contact -->
                 <div class="space-y-4">
-                    <h4 class="text-sm font-semibold text-gray-900">Connect With Us</h4>
+                    <h4 class="text-sm font-semibold text-gray-900">关注我们</h4>
                     <div class="flex space-x-3">
-                        <!-- Social media icons remain same -->
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition-all duration-300 group">
+                            <span class="sr-only">X (Twitter)</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-gray-600 group-hover:text-green-500 transition-colors">
+                                <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition-all duration-300 group">
+                            <span class="sr-only">YouTube</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-gray-600 group-hover:text-green-500 transition-colors">
+                                <path
+                                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                                <path d="m10 15 5-3-5-3z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition-all duration-300 group">
+                            <span class="sr-only">Reddit</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-gray-600 group-hover:text-green-500 transition-colors">
+                                <path d="M12 8c-1.37.2-3 .7-4 2-1.5 2-1 5.5-1 8 0 1.5 1 3 3 3s3-1 3-3V8Z" />
+                                <path d="M12 8c1.37.2 3 .7 4 2 1.5 2 1 5.5 1 8 0 1.5-1 3-3 3s-3-1-3-3V8Z" />
+                                <path d="M9 11h6" />
+                                <path d="M11 15h2" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm border border-gray-100 hover:border-green-200 hover:bg-gradient-to-br hover:from-green-50 hover:to-emerald-50 transition-all duration-300 group">
+                            <span class="sr-only">Discord</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-gray-600 group-hover:text-green-500 transition-colors">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0-2 0" />
+                                <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0-2 0" />
+                                <path
+                                    d="M15.5 17c0 1 1.5 3 2 3 1.5 0 2.833-1.667 3.5-3 .667-1.667.5-5.833-1.5-11.5-1.457-1.015-3-1.34-4.5-1.5l-.972 1.923a11.913 11.913 0 0 0-4.053 0L9 4c-1.5.16-3.043.485-4.5 1.5-2 5.667-2.167 9.833-1.5 11.5.667 1.333 2 3 3.5 3 .5 0 2-2 2-3" />
+                                <path d="M7 16.5c3.5 1 6.5 1 10 0" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
 
+            <!-- Bottom Bar -->
             <div class="pt-8 border-t border-gray-100">
                 <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <p class="text-sm text-gray-600">© 2024 Monkey Mart. All rights reserved.</p>
+                    <!-- Copyright -->
+                    <p class="text-sm text-gray-600"> 2024 Sprunki. All rights reserved.</p>
+
+                    <!-- Legal Links -->
                     <div class="flex space-x-6">
-                        <a href="#" class="text-sm text-gray-600 hover:text-green-500 transition-colors">Privacy Policy</a>
-                        <a href="#" class="text-sm text-gray-600 hover:text-green-500 transition-colors">Terms of Service</a>
-                        <a href="#" class="text-sm text-gray-600 hover:text-green-500 transition-colors">Disclaimer</a>
+                        <a href="#" class="text-sm text-gray-600 hover:text-green-500 transition-colors">隐私政策</a>
+                        <a href="#" class="text-sm text-gray-600 hover:text-green-500 transition-colors">服务条款</a>
+                        <a href="#" class="text-sm text-gray-600 hover:text-green-500 transition-colors">免责声明</a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+    <section id="game-overlay" class="fixed inset-0 bg-black/80 z-[2000] hidden">
+        <div class="relative w-full h-full flex items-center justify-center">
+            <!-- Game Container -->
+            <div class="relative w-full max-w-7xl mx-4 bg-white rounded-lg" style="border: 5px solid #FF1493;">
+                <!-- Close Button -->
+                <button id="close-game"
+                    class="absolute top-4 right-4 p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors z-10">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Game Iframe -->
+                <iframe id="iframehtml5" class="game-iframe" src="https://sprunki.org/sprunki-game-home.embed"
+                    width="100%" height="601px" title="Sprunki Incredibox" frameborder="0" border="0" scrolling="auto"
+                    allowfullscreen="" data-wg-content="true">
+                </iframe>
+            </div>
+        </div>
+    </section>
 </body>
+<script>
+    // Add this to your existing script section
+    document.addEventListener('DOMContentLoaded', () => {
+        const heroButton = document.querySelector('#hero-play-button'); // Add an ID to your hero button
+        const gameOverlay = document.querySelector('#game-overlay');
+        const closeGameButton = document.querySelector('#close-game');
+
+        // Show game overlay
+        heroButton.addEventListener('click', () => {
+            gameOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+
+        // Hide game overlay
+        closeGameButton.addEventListener('click', () => {
+            gameOverlay.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+    });
+</script>
+
+<script>
+    function gameModal() {
+        return {
+            isOpen: false,
+            title: '',
+            gameUrl: '',
+            isFullscreen: false,
+
+            open(title, url) {
+                this.isOpen = true;
+                this.title = title;
+                this.gameUrl = url;
+                document.body.style.overflow = 'hidden';
+            },
+
+            close() {
+                if (this.isFullscreen) {
+                    this.toggleFullscreen();
+                }
+                this.isOpen = false;
+                document.body.style.overflow = '';
+            },
+
+            toggleFullscreen() {
+                this.isFullscreen = !this.isFullscreen;
+
+                if (this.isFullscreen) {
+                    // 进入全屏模式
+                    document.documentElement.style.overflow = 'hidden';
+                    document.body.style.overflow = 'hidden';
+
+                    // 在 iOS Safari 中，需要特别处理顶部和底部工具栏
+                    if (this.isIOS()) {
+                        window.scrollTo(0, 0);
+                        document.body.style.position = 'fixed';
+                        document.body.style.width = '100%';
+                        document.body.style.height = '100%';
+                    }
+                } else {
+                    // 退出全屏模式
+                    document.documentElement.style.overflow = '';
+                    document.body.style.overflow = 'hidden'; // 保持模态框滚动锁定
+
+                    if (this.isIOS()) {
+                        document.body.style.position = '';
+                        document.body.style.width = '';
+                        document.body.style.height = '';
+                    }
+                }
+
+                this.isFullscreen = !this.isFullscreen;
+            },
+
+            isIOS() {
+                return [
+                    'iPad Simulator',
+                    'iPhone Simulator',
+                    'iPod Simulator',
+                    'iPad',
+                    'iPhone',
+                    'iPod'
+                ].includes(navigator.platform)
+                    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+            }
+        }
+    }
+</script>
 
 <style>
     /* 确保按钮容器占据其父元素的全部宽度 */
@@ -798,4 +1177,5 @@
         /* 更深的绿色 */
     }
 </style>
+
 </html>

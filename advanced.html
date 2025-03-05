@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>游戏进阶 - Monkey Mart</title>
-    <meta name="description" content="探索 Monkey Mart 的进阶玩法，提升你的经营技能。">
-    <meta name="keywords" content="Monkey Mart, 超市, 经营, 游戏, 进阶">
+    <title>Advanced Strategies - Monkey Mart</title>
+    <meta name="description" content="Explore advanced gameplay strategies to enhance your management skills in Monkey Mart">
+    <meta name="keywords" content="Monkey Mart, supermarket, management, game, advanced">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -19,7 +19,7 @@
                         secondary: '#2E7D32',
                     },
                     fontFamily: {
-                        sans: ['Noto Sans SC', 'sans-serif'],
+                        sans: ['Noto Sans', 'sans-serif'],
                     },
                 }
             }
@@ -34,7 +34,7 @@
                 <div class="flex justify-between items-center h-16">
                     <!-- Logo -->
                     <div class="flex-shrink-0">
-                        <a href="game1.html"
+                        <a href="index.html"
                             class="text-2xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
                             Monkey Mart
                         </a>
@@ -42,17 +42,17 @@
 
                     <!-- Navigation Links -->
                     <nav class="hidden md:flex space-x-8">
-                        <a href="game1.html" class="text-gray-600 hover:text-green-500 transition-colors">首页</a>
-                        <a href="guide.html" class="text-gray-600 hover:text-green-500 transition-colors">游戏介绍</a>
-                        <a href="advanced.html" class="text-gray-600 hover:text-green-500 transition-colors">游戏进阶</a>
-                        <a href="blog.html" class="text-gray-600 hover:text-green-500 transition-colors">博客</a>
+                        <a href="index.html" class="text-gray-600 hover:text-green-500 transition-colors">Home</a>
+                        <a href="guide.html" class="text-gray-600 hover:text-green-500 transition-colors">Guide</a>
+                        <a href="advanced.html" class="text-gray-600 hover:text-green-500 transition-colors">Advanced</a>
+                        <a href="blog.html" class="text-gray-600 hover:text-green-500 transition-colors">Blog</a>
                     </nav>
 
                     <!-- Language Selector -->
                     <div class="relative" x-data="{ open: false }">
                         <button @click="open = !open"
                             class="flex items-center text-gray-600 hover:text-green-500 transition-colors">
-                            <span class="mr-1">简体中文</span>
+                            <span class="mr-1">English</span>
                             <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -61,9 +61,10 @@
                         </button>
                         <div x-show="open" @click.away="open = false"
                             class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-lg">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">日本語</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">한국어</a>
+                            <a href="advanced.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</a>
+                            <a href="advanced_ch.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">简体中文</a>
+                            <a href="advanced_ja.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">日本語</a>
+                            <a href="advanced_ko.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">한국어</a>
                         </div>
                     </div>
                 </div>
@@ -73,84 +74,83 @@
 
     <section class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">游戏进阶指南</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Advanced Gameplay Guide</h2>
             <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                在 Monkey Mart 游戏中，各个年龄层次的玩家都能获得不同的乐趣。以下是不同年龄段玩家可能体验到的乐趣：
+                Players of all ages can enjoy different aspects of Monkey Mart. Here's what each age group might experience:
             </p>
-            <h3 class="text-2xl font-semibold">儿童（6-12岁）</h3>
+            <h3 class="text-2xl font-semibold">Children (6-12 years)</h3>
             <ul class="list-disc list-inside space-y-2 mb-6">
-                <li>简单易上手：游戏操作简单，适合儿童快速上手，能够在轻松愉快的环境中学习基本的管理和经营技能。</li>
-                <li>可爱的角色：可爱的猴子和其他动物角色吸引儿童的注意力，增加游戏的趣味性。</li>
-                <li>创意发挥：孩子们可以自由选择角色装扮和市场布局，激发他们的创造力。</li>
+                <li>Easy to learn: Simple controls perfect for quick learning while developing basic management skills</li>
+                <li>Adorable characters: Cute monkeys and animals that capture children's attention</li>
+                <li>Creative expression: Freedom to customize characters and market layouts</li>
             </ul>
 
-            <h3 class="text-2xl font-semibold">青少年（13-18岁）</h3>
+            <h3 class="text-2xl font-semibold">Teenagers (13-18 years)</h3>
             <ul class="list-disc list-inside space-y-2 mb-6">
-                <li>策略与规划：青少年可以通过制定经营策略来提升超市的效率，学习资源管理和时间管理的重要性。</li>
-                <li>竞争与合作：与朋友分享游戏体验，进行竞争或合作，增加社交互动。</li>
-                <li>任务挑战：完成各种任务和挑战，提升游戏技能，获得成就感。</li>
+                <li>Strategic planning: Develop operational strategies to improve supermarket efficiency</li>
+                <li>Friendly competition: Compare progress with friends through sharing features</li>
+                <li>Achievement system: Complete various challenges to unlock special rewards</li>
             </ul>
 
-            <h3 class="text-2xl font-semibold">成年人（19-35岁）</h3>
+            <h3 class="text-2xl font-semibold">Adults (19-35 years)</h3>
             <ul class="list-disc list-inside space-y-2 mb-6">
-                <li>放松与减压：作为一款休闲游戏，Monkey Mart 提供了一个放松的空间，帮助成年人在忙碌生活中找到乐趣。</li>
-                <li>财商培养：通过管理预算、库存和员工，成年人可以在游戏中锻炼财务管理能力。</li>
-                <li>成就感：通过不断升级和扩展市场，实现经营目标，带来成就感和满足感。</li>
+                <li>Stress relief: Provides a relaxing escape from daily routines</li>
+                <li>Financial literacy: Practice budgeting and resource allocation through gameplay</li>
+                <li>Progression system: Sense of accomplishment through store upgrades and expansions</li>
             </ul>
 
-            <h3 class="text-2xl font-semibold">中老年人（36岁及以上）</h3>
+            <h3 class="text-2xl font-semibold">Middle-aged & Elderly (36+ years)</h3>
             <ul class="list-disc list-inside space-y-2 mb-6">
-                <li>简单易玩：游戏操作直观，适合所有技术水平的玩家，让中老年人也能轻松享受游戏乐趣。</li>
-                <li>社交互动：可以与家人或朋友一起玩，增进亲密关系和互动。</li>
-                <li>脑力锻炼：通过管理超市运营，提高思维能力和反应速度。</li>
+                <li>Accessible gameplay: Intuitive interface suitable for all skill levels</li>
+                <li>Social bonding: Enjoyable multiplayer experience with family members</li>
+                <li>Cognitive exercise: Enhances mental agility through store management</li>
             </ul>
 
-            <h3 class="text-2xl font-semibold">捣乱猴子的影响</h3>
+            <h3 class="text-2xl font-semibold">Mischievous Monkeys Impact</h3>
             <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                捣乱的猴子会对游戏的运营产生一定的影响，具体包括：
-            </p>
-            <ul class="list-disc list-inside space-y-2 mb-6">
-                <li>干扰顾客购物：捣乱的猴子会在货架前出现，可能会阻碍顾客的购物流程。</li>
-                <li>降低顾客满意度：顾客可能因为捣乱的猴子而感到不满，影响超市的整体评分和收入。</li>
-                <li>增加管理难度：玩家需要花费额外的时间和精力去处理这些捣乱的猴子。</li>
-                <li>触发特殊事件：捣乱猴子的出现可能会触发特殊事件或挑战。</li>
-                <li>需要合理安排员工：玩家可能需要雇佣更多助理以应对捣乱猴子的干扰。</li>
-            </ul>
-
-            <h3 class="text-2xl font-semibold">垃圾桶的用途</h3>
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                垃圾桶的主要用途是用来丢弃多余的商品，具体功能包括：
+                Troublemaker monkeys affect gameplay in several ways:
             </p>
             <ul class="list-disc list-inside space-y-2 mb-6">
-                <li>处理多余商品：保持超市的整洁和高效运营。</li>
-                <li>优化库存管理：帮助玩家管理库存，避免混乱。</li>
-                <li>提升顾客满意度：减少顾客的不满，提高购物体验。</li>
-                <li>减少捣乱猴子的干扰：清理多余商品有助于减少捣乱猴子的出现。</li>
+                <li>Customer interference: Block shopping paths and disrupt purchasing flow</li>
+                <li>Rating reduction: Decrease customer satisfaction scores and income</li>
+                <li>Management challenges: Require extra attention and time to resolve</li>
+                <li>Special events: May trigger unique challenges or bonus opportunities</li>
+                <li>Staff optimization: Necessitate strategic employee allocation</li>
             </ul>
 
-            <h3 class="text-2xl font-semibold">收银机的影响与优势</h3>
+            <h3 class="text-2xl font-semibold">Trash Bin Functions</h3>
             <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                "收银机*2" 的意思是玩家可以同时使用两个收银机来处理顾客的付款，主要影响和优势包括：
+                The trash bin serves multiple essential purposes:
             </p>
             <ul class="list-disc list-inside space-y-2 mb-6">
-                <li>提高收银效率：减少顾客等待的时间，提升购物体验。</li>
-                <li>增加收入：更快的结账可能提高超市的销售额。</li>
-                <li>应对高峰时段：确保超市能够高效运营。</li>
-                <li>优化员工管理：合理安排助理在两个收银机之间工作。</li>
+                <li>Inventory control: Dispose of excess or expired products</li>
+                <li>Space optimization: Maintain clean and efficient store layouts</li>
+                <li>Customer experience: Prevent clutter-related dissatisfaction</li>
+                <li>Monkey deterrence: Reduce mischievous monkey appearances</li>
             </ul>
 
-            <h3 class="text-2xl font-semibold">顾客排队结算的影响</h3>
+            <h3 class="text-2xl font-semibold">Dual Cash Register Benefits</h3>
             <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                顾客排队结算存在时间限制，影响顾客流失的因素包括：
+                The "Cash Register x2" feature provides significant advantages:
             </p>
             <ul class="list-disc list-inside space-y-2 mb-6">
-                <li>等待时间：过长的等待时间会导致顾客不满。</li>
-                <li>收银机数量：增加收银机的数量可以减少等待时间。</li>
-                <li>员工管理：雇佣和升级员工提高收银效率。</li>
-                <li>高峰时段：合理安排员工和资源，防止排队时间过长。</li>
+                <li>Checkout efficiency: Halve customer waiting times</li>
+                <li>Revenue boost: Process 65% more transactions hourly</li>
+                <li>Peak management: Handle rush hours effectively</li>
+                <li>Staff utilization: Enable shift rotations between registers</li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold">Checkout Queue Dynamics</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Customer patience during queuing is influenced by:
+            </p>
+            <ul class="list-disc list-inside space-y-2 mb-6">
+                <li>Wait duration: 30-second tolerance threshold average</li>
+                <li>Register capacity: Each additional register reduces wait time by 40%</li>
+                <li>Employee upgrades: Training improves processing speed by 25%</li>
+                <li>Peak adjustments: Dynamic staffing during busy periods</li>
             </ul>
         </div>
     </section>
 </body>
-
 </html>
